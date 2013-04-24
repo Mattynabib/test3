@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- adding the Viewport meta tag is critical for true responsiveness! -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<!-- let's use a few web fonts to keep it looking nice -->
+<link href='http://fonts.googleapis.com/css?family=Signika+Negative|Cardo' rel='stylesheet' />
+
+<!-- Here's the main style sheet -->
+<link rel="stylesheet" href="styles/test3.css" />
+
+<!-- Now we throw in some JS and JQuery to bring interaction -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+<script src="http://html5shiv.googlecode.com/svn/trunk/"></script>
+<script src="js/test3-ck.js"></script>
+<script src="js/audio.min.js"></script>
+
+<title>RWD Test 3</title>
+</head>
+
+<body class="has">
+<div id="top"></div>
+<div id="outer">
+  <div id="wrapper">
+    <header>
+      <div id="logo">Logo</div>
+      <a href="#menu" class="menu-link"><span class="icon"></span></a>
+      <nav id="menu" role="navigation">
+        <ul>
+          <li><a href="#">Nav1</a></li>
+          <li><a href="#">Nav2</a></li>
+          <li><a href="#">Nav3</a></li>
+          <li><a href="#">Nav4</a></li>
+          <li><a href="#">Nav5</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="backToTop"><a href="#top">back<br />
+      to top</a></div>
+    <div id="pageContents">
+      <div id="mainContent">
+        <h2>Test 2: Getting more responsive...</h2>
+        <section class="articlePlain">
+          <p><img class="articleImg" src="http://placekitten.com/g/150/200" />Now we're cookin... this second pass includes several things: First, this version now has two breakpoints: the first one at 48em that drops everything to one column, and now a second one at 31em that further narrows things by making the nav into a collapsible menu. Most importantly, we now have a &lt;viewport&gt; tag that lets mobile devices parse the page properly upon load, and display it more appropriately for that context.</p>
+          <p>This version also introduces a whole bunch of JQuery. The first bit is simply to activate the accordion items. There is also some to deal with the new menu-nav, detecting the user's click and opening or closing the menu. Finally, there's some to make our new "Back To Top" link show up when enough scrolling has happened.</p>
+          <p>Oh, and the smashing kitten image to the right is provided courtesy of placekitten.com. It has a little more personality than placehold.it, and while I like Flickholder.com in theory, the initial load time to pull in an image seems pretty slow. And who doesn't love kittens?</p>
+        </section>
+        <div class="clearasil"></div>
+        <section class="accordion">
+        <div class="accordionitem">
+          <h3>This is an accordion item header</h3>
+          <div class="accordionContents">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec lectus enim. In hac habitasse platea dictumst. Nam est diam, lobortis sit amet lobortis et, viverra id nunc. Maecenas purus magna, consectetur nec lobortis nec, commodo vel nunc. Nunc nec diam dolor, ac eleifend massa. Fusce commodo, urna vel ultrices feugiat, odio nunc eleifend magna, ut scelerisque justo nisl a felis. Etiam molestie ullamcorper posuere. Mauris euismod scelerisque magna, eu pellentesque dolor tempus at.</p>
+            </div>
+          </div>
+          <div class="accordionitem">
+            <h3>Yet another accordion item header</h3>
+            <div class="accordionContents">
+            <p>Praesent lobortis laoreet pharetra. Integer ornare tempus ante, fringilla aliquet nibh adipiscing quis. Fusce et feugiat sem. Sed id auctor velit. Nullam arcu libero, suscipit non consequat in, ultricies eget leo. Fusce semper porttitor enim sit amet ultricies. Aliquam consequat nibh quis nisi ullamcorper sodales.</p>
+            </div>
+          </div>
+          <div class="accordionitem">
+            <h3>Yet another accordion item header</h3>
+            <div class="accordionContents">
+            <p>Aliquam dignissim rhoncus libero sit amet facilisis. Maecenas feugiat arcu vitae nisi condimentum faucibus. Morbi diam lorem, condimentum vitae suscipit id, mollis a dolor. Morbi non ligula id nisi fermentum bibendum vel sit amet dolor. Sed egestas, magna id ultricies molestie, urna diam dictum orci, ut fermentum eros mi nec lorem. Fusce tincidunt, velit nec congue elementum, mauris metus egestas est, et posuere lectus arcu ac odio. Phasellus rhoncus mauris vestibulum sapien molestie quis bibendum erat porta. Donec vestibulum gravida enim a lacinia.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section id="sideBar">
+        <div class="sideItem">
+          <h2>Side item header</h2>
+          <p>This is the first side item</p>
+        </div>
+        <div class="sideItem">
+          <h2>Item 2 header</h2>
+          <p>Yet another side item</p>
+        </div>
+      </section>
+      <section id="sidebox">
+        <h2>A different side item</h2>
+        <p>Info here</p>
+      </section>
+    </div>
+  </div>
+  <div id="musicPlayer">
+  		<span class="playerText"><h3>Player</h3></span>
+  		<span class="daVolume">50</span>
+    	<audio>
+        	<source src="media/kids.mp3" type='audio/mpeg; codecs="mp3"' >
+            <source src="media/kids.ogg" type='audio/ogg; codecs="vorbis"' >
+            <p>can't play this!</p>
+        </audio>
+ 	</div>
+  <footer>
+    <div><p>Footer</p></div>
+  </footer>
+</div>
+</body>
+</html>

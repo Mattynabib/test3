@@ -1,0 +1,681 @@
+/* =======================================================
+  	RESET! Put together from a few resets
+========================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Cardo", "Times", serif;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222; }
+
+.clearasil {
+  clear: both; }
+
+/* =======================================================
+      Variables 
+========================================================== */
+/* =======================================================
+  	My styles and such
+========================================================== */
+body {
+  background-color: #cccccc; }
+
+#wrapper {
+  width: 68.75em;
+  max-width: 90%;
+  margin: 1em auto 0 auto;
+  position: relative;
+  min-height: 100%; }
+
+header {
+  background-color: white;
+  width: 100%;
+  height: 3em;
+  margin: .6em 0;
+  padding: 1em; }
+
+#logo {
+  display: block;
+  float: left;
+  font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+  text-decoration: none;
+  font-size: 1.1em;
+  text-align: center; }
+
+#mainColumn {
+  background-color: white;
+  width: 96%;
+  margin: 0em 1em; }
+
+h1 {
+  color: #333;
+  font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+  font-size: 2em;
+  font-weight: bold; }
+
+h2 {
+  color: #333;
+  font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.3em;
+  margin-bottom: 1em; }
+
+h3 {
+  font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+  font-size: 1em;
+  color: #333;
+  text-decoration: none; }
+
+p {
+  margin: 0 0 1.1em 0;
+  color: #000;
+  font-family: "Cardo", "Times", serif;
+  font-size: 1em;
+  line-height: 1.3em; }
+
+img.articleImg {
+  float: right;
+  margin: 0 0 1em 1em;
+  border: 1px solid #aaa; }
+
+.articlePlain {
+  padding-bottom: 1em; }
+
+nav {
+  position: absolute;
+  top: .7em;
+  right: .7em;
+  line-height: 2em; }
+  nav ul {
+    float: right; }
+  nav li {
+    display: inline;
+    border-left: 1px #cccccc solid; }
+    nav li a {
+      font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+      text-align: center;
+      padding: .2em .8em;
+      margin: 0 0 0 .3em;
+      color: #663333; }
+    nav li a.activeLink {
+      background-color: #ffcc00; }
+    nav li a:hover {
+      background: #ffcc00;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #ffe014 0%, #ffcc00 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffe014), color-stop(100%, #ffcc00));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #ffe014 0%, #ffcc00 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #ffe014 0%, #ffcc00 100%);
+      /* Opera11.10+ */
+      background: -ms-linear-gradient(top, #ffe014 0%, #ffcc00 100%);
+      /* IE10+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$navColor+20, endColorstr=$navColor,GradientType=0 );
+      /* IE6-9 */
+      background: linear-gradient(top, #ffe014 0%, #ffcc00 100%);
+      /* W3C */
+      text-decoration: none; }
+    nav li:first-child {
+      border: none; }
+
+#mainContent {
+  background-color: white;
+  float: left;
+  padding: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 3em;
+  width: 68%; }
+
+.accordion {
+  width: 100%; }
+  .accordion .accordionitem {
+    cursor: pointer;
+    background-color: #AAA;
+    margin-bottom: 1em; }
+    .accordion .accordionitem h3 {
+      margin: 0;
+      padding: 0.5em; }
+  .accordion .accordionContents {
+    -webkit-transition: max-height 0.3s ease-out;
+    -moz-transition: max-height 0.3s ease-out;
+    -ms-transition: max-height 0.3s ease-out;
+    -o-transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out;
+    background-color: #AAA;
+    max-height: 0px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 .5em;
+    /* this class gets appended to .accordionitem through jquery 
+       and therefore changes to full height */ }
+    .accordion .accordionContents.openMe {
+      overflow: auto; }
+
+a.menu-link {
+  display: none; }
+
+#backToTop a {
+  /* This is all for the Back To Top link, which shows
+     up only when the user scrolls down so the header is
+     hidden (that part is accomplished in Javascript) */
+  /* display as block, then hide it */
+  display: block;
+  display: none;
+    /* make sure it's top of all other elements and
+	   doesn't completely hide the content behind it */
+  z-index: 999;
+  opacity: .8;
+  /* keep it fixed in the upper right when showing */
+  position: fixed;
+  top: .5em;
+  right: .7em;
+  /* round the corners using the $genRadius var set in the SCSS */
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+  padding: .8em;
+  background-color: #333;
+  font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: .8em;
+  color: #fff; }
+  #backToTop a:hover {
+    background-color: #000;
+    opacity: .9; }
+
+#sideBar, #sidebox {
+  background-color: white;
+  min-height: 10em;
+  float: right;
+  border-left: 1px #cccccc solid;
+  padding: 1em;
+  margin-top: 1.5em;
+  width: 28%; }
+  #sideBar h2, #sidebox h2 {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    margin-bottom: .4em; }
+  #sideBar p, #sidebox p {
+    font-size: .8em;
+    line-height: 1.2em; }
+  #sideBar .sideItem, #sidebox .sideItem {
+    padding-bottom: 1em; }
+
+#sidebox {
+  background-color: #FFC; }
+
+footer {
+  background-color: #aaaaaa;
+  position: fixed;
+  bottom: 0em;
+  height: 3em;
+  width: 100%;
+  margin: 0 auto; }
+
+#musicPlayer {
+  -webkit-box-shadow: -2px 2px 6px #666666;
+  -moz-box-shadow: -23px 2px 6px #666666;
+  box-shadow: -2px 2px 6px #666666;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  background-color: #300;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+  width: 1em;
+  overflow: hidden;
+  position: fixed;
+  right: -0.5em;
+  top: 6em;
+  z-index: 20;
+  padding: 1.5em 0 1.5em 2em;
+  margin-left: 0 auto; }
+  #musicPlayer .playerText {
+    cursor: pointer;
+    position: absolute;
+    top: 2.1em;
+    left: 0;
+    margin-left: -1em; }
+    #musicPlayer .playerText h3 {
+      text-transform: uppercase;
+      font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+      font-size: .8em;
+      font-weight: bold;
+      letter-spacing: .1em;
+      color: #fff;
+      text-align: center;
+      left: 0;
+      top: 0;
+      /* rotation transform */
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0); }
+
+#musicPlayer.openIt {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  width: 33em;
+  overflow: visible;
+  right: -1em;
+  top: 6em; }
+
+.daVolume {
+  display: block;
+  overflow: hidden;
+  max-height: 0; }
+
+.audiojs audio {
+  position: absolute;
+  left: -1px; }
+
+.audiojs {
+  width: 450px;
+  height: 34px;
+  margin-left: .5em;
+  background: #404040;
+  overflow: hidden;
+  font-family: monospace;
+  font-size: 12px;
+  background-image: webkit-gradient(linear, left top, left bottom, color-stop(0, #444444), color-stop(0.5, #555555), color-stop(0.51, #444444), color-stop(1, #444444));
+  background-image: -moz-linear-gradient(center top, #444444 0%, #555555 50%, #444444 51%, #444444 100%);
+  -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); }
+
+.audiojs .play-pause {
+  width: 25px;
+  height: 40px;
+  padding: 4px 6px;
+  margin: 0px;
+  float: left;
+  overflow: hidden;
+  border-right: 1px solid #000; }
+
+.audiojs p {
+  display: none;
+  width: 25px;
+  height: 40px;
+  margin: 0px;
+  cursor: pointer; }
+
+.audiojs .play {
+  display: block; }
+
+.audiojs .scrubber {
+  position: relative;
+  float: left;
+  width: 280px;
+  background: #5a5a5a;
+  height: 14px;
+  margin: 10px;
+  border-top: 1px solid #3f3f3f;
+  border-left: 0px;
+  border-bottom: 0px;
+  overflow: hidden; }
+
+.audiojs .progress {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 14px;
+  width: 0px;
+  background: #ccc;
+  z-index: 1;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cccccc), color-stop(0.5, #dddddd), color-stop(0.51, #cccccc), color-stop(1, #cccccc));
+  background-image: -moz-linear-gradient(center top, #cccccc 0%, #dddddd 50%, #cccccc 51%, #cccccc 100%); }
+
+.audiojs .loaded {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 14px;
+  width: 0px;
+  background: #000;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222222), color-stop(0.5, #333333), color-stop(0.51, #222222), color-stop(1, #222222));
+  background-image: -moz-linear-gradient(center top, #222222 0%, #333333 50%, #222222 51%, #222222 100%); }
+
+.audiojs .time {
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  margin: 0px 0px 0px 6px;
+  padding: 0px 6px 0px 12px;
+  border-left: 1px solid #000;
+  color: #ddd;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5); }
+
+.audiojs .time em {
+  padding: 0px 2px 0px 0px;
+  color: #f9f9f9;
+  font-style: normal; }
+
+.audiojs .time strong {
+  padding: 0px 0px 0px 2px;
+  font-weight: normal; }
+
+.audiojs .error-message {
+  float: left;
+  display: none;
+  margin: 0px 10px;
+  height: 36px;
+  width: 400px;
+  overflow: hidden;
+  line-height: 36px;
+  white-space: nowrap;
+  color: #fff;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -icab-text-overflow: ellipsis;
+  -khtml-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis; }
+
+.audiojs .error-message a {
+  color: #eee;
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #999;
+  white-space: wrap; }
+
+.audiojs .play {
+  background: url("../media/player-graphics.gif") -8px -1px no-repeat; }
+
+.audiojs .loading {
+  background: url("../media/player-graphics.gif") -8px -31px no-repeat; }
+
+.audiojs .error {
+  background: url("../media/player-graphics.gif") -8px -61px no-repeat; }
+
+.audiojs .pause {
+  background: url("../media/player-graphics.gif") -8px -91px no-repeat; }
+
+.playing .play, .playing .loading, .playing .error {
+  display: none; }
+
+.playing .pause {
+  display: block; }
+
+.loading .play, .loading .pause, .loading .error {
+  display: none; }
+
+.loading .loading {
+  display: block; }
+
+.error .time, .error .play, .error .pause, .error .scrubber, .error .loading {
+  display: none; }
+
+.error .error {
+  display: block; }
+
+.error .play-pause p {
+  cursor: auto; }
+
+.error .error-message {
+  display: block; }
+
+/* ===================================================== 
+   						MEDIA QUERIES 
+   ===================================================== */
+@media only screen and (max-width: 48em) {
+  #wrapper {
+    background-color: transparent;
+    width: 48em;
+    max-width: 94%;
+    margin-bottom: 3em; }
+
+  .js nav[role=navigation] {
+    max-height: none; }
+
+  .pageContents {
+    padding-bottom: 3em; }
+
+  #sideBar, #sidebox {
+    float: none;
+    clear: both;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    min-height: 100px;
+    border: none; }
+
+  #mainContent {
+    background-color: white;
+    width: 100%;
+    padding-bottom: .5em;
+    margin-bottom: 1.5em; } }
+@media only screen and (max-width: 31em) {
+  /* Here are the styles for when our page drops to below our smallest breakpoint */
+  body {
+    min-width: 19em;
+    max-width: 31em; }
+
+  #wrapper {
+    width: 31em;
+    max-width: 94%;
+    margin: 1em 1em 1em .5em; }
+
+  #mainContent {
+    margin-top: 15.5em;
+    min-width: 31em -1em; }
+    #mainContent h2 {
+      font-size: 1.1em;
+      line-height: 1.2em; }
+
+  .js #mainContent {
+    margin-top: .5em;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
+
+  a.menu-link {
+    display: block;
+    display: none;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 500;
+    border-left: 1px solid #cccccc;
+    background-color: #FFC; }
+    a.menu-link .icon {
+      display: block;
+      position: absolute;
+      top: 1.2em;
+      left: 1em;
+      width: 1em;
+      height: .5em;
+      padding-bottom: .125em;
+      border-top: .375em double #666;
+      border-bottom: .125em solid #666; }
+    a.menu-link:hover.menu-link {
+      border-left: 1px solid #cccccc; }
+
+  .js .menu-link {
+    display: block; }
+
+  header {
+    min-height: 3em;
+    width: 100%; }
+    header .logo {
+      clear: left;
+      float: none;
+      margin: 0px auto;
+      padding-top: 2em;
+      padding-bottom: .6em; }
+
+  nav {
+    width: 100%;
+    font-size: 1em;
+    position: absolute;
+    z-index: 500;
+    top: 3em;
+    left: 0em; }
+    nav ul {
+      float: none;
+      border-top: 1px solid #cccccc; }
+      nav ul li {
+        display: block;
+        background-color: #FFF;
+        border-left: none;
+        border-right: none; }
+        nav ul li a {
+          height: 3em;
+          display: block;
+          padding-top: .5em;
+          margin: 0;
+          border-bottom: 1px solid #cccccc; }
+          nav ul li a :hover {
+            background-color: #FC0; }
+
+  .audiojs {
+    width: 350px;
+    margin: 0 auto; }
+
+  #musicPlayer {
+    -webkit-box-shadow: 0 -3px 6px #666666;
+    -moz-box-shadow: 0 -3px 6px #666666;
+    box-shadow: 0 -3px 6px #666666;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    background-color: #300;
+    width: 100%;
+    top: auto;
+    /*	overflow: hidden; */
+    position: fixed;
+    bottom: -4.5em;
+    z-index: 20;
+    left: 0;
+    padding: 2em 0 2em 0;
+    margin-left: 0 auto; }
+    #musicPlayer .playerText {
+      cursor: pointer;
+      position: absolute;
+      top: .5em;
+      left: 2em;
+      margin-left: -1em; }
+      #musicPlayer .playerText h3 {
+        text-transform: uppercase;
+        font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+        font-size: .8em;
+        font-weight: bold;
+        letter-spacing: .1em;
+        color: #fff;
+        text-align: center;
+        left: 0;
+        top: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
+
+  #musicPlayer.openIt {
+    bottom: -1em;
+    width: 100%;
+    top: auto;
+    right: auto; }
+
+  /* This is the stuff that makes our nav appear and disappear */
+  .js nav[role=navigation] {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
+
+  nav[role=navigation].active {
+    max-height: 15.5em; }
+
+  #mainContent.pushDown {
+    margin-top: 15.5em; }
+
+  #sideBar, #sidebox {
+    float: none;
+    clear: both;
+    border: none;
+    position: relative;
+    width: 100%; }
+
+  footer {
+    background-color: #aaaaaa;
+    position: relative;
+    height: 4em;
+    width: 100%;
+    padding: .5em; } }

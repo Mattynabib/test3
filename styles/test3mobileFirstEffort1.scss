@@ -1,0 +1,474 @@
+/* =======================================================
+  	RESET! Put together from a few resets
+========================================================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "Cardo", "Times", serif;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	text-rendering: optimizeLegibility;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+.clearasil {
+	clear: both;	
+}
+
+
+/* =======================================================
+      Variables 
+========================================================== */
+
+
+$mobileWidth: 31em;
+$smallDeskWidth: 48em;
+$deskWidth: 68.75em;
+
+$pageColor: #FFF;
+$bgColor: #CCC;
+$navColor: #FC0;
+$footerColor: #aaa;
+
+$borderColors: #CCC;
+$linkColors: #633;
+
+$genRadius: 0.3em;
+$numNavItems: 5;
+
+$pushDownVal: $numNavItems * 3.1em;
+
+
+/* =======================================================
+  	My styles and such
+========================================================== */
+
+body {
+	background-color:$bgColor;	
+}
+
+#wrapper {
+	width: $mobileWidth;
+	max-width:90%;
+	margin: 1em 1em 1em .5em;
+}
+
+nav {
+	  width: 100%;
+	  font-size: 1em;
+	  position: absolute;
+	  z-index:500;
+	  top:3em;
+	  left: 0em;
+	  ul {
+		  float:none;	
+		  border-top: 1px solid $borderColors;
+		  li {
+			  display: block;
+			  background-color: #FFF;
+			  border-left: none;
+			  border-right: none;
+			  a {
+				  font-family:  "Signika Negative", "Gotham", "Helvetica", sans-serif;
+				  text-align: center;
+				  color: $linkColors;
+				  height: 3em;
+				  display: block;
+				  padding-top: .5em;
+				  margin: 0;
+				  border-bottom: 1px solid $borderColors;
+				  &:hover {
+					  background-color: $navColor;
+				  }
+			  }
+		  }
+	  }
+  }
+
+  #mainContent {
+	  background-color: $pageColor;
+	  margin-top: $pushDownVal;
+	  min-width: $deskWidth -1em;
+	  h2 {
+	   font-size: 1.1em;
+	   line-height: 1.2em;
+	  }
+  }
+  
+	  #logo {
+	  display: block;
+	  float: left;	
+	  font-family:  "Signika Negative", "Gotham", "Helvetica", sans-serif;
+	  text-decoration: none;
+	  font-size: 1.1em;
+	  text-align: center;
+  }	
+  
+  #mainColumn {
+	  background-color: $pageColor;
+	  width: 96%;	
+	  margin: 0em 1em;
+  }
+		  
+  h1 {
+	  color: #333;
+	  font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+	  font-size: 2em;
+	  font-weight: bold;
+  }
+  
+  h2 {
+	  color: #333;
+	  font-family: "Signika Negative", "Gotham", "Helvetica", sans-serif;
+	  font-size: 1.5em;
+	  line-height: 1.3em;
+	  margin-bottom: 1em;
+  }
+  
+  h3 {
+	  font-family:  "Signika Negative", "Gotham", "Helvetica", sans-serif;
+	  font-size: 1em;
+	  color: #333;
+	  text-decoration: none;
+	  
+  }
+  
+  p {
+	  margin: 0 0 1.1em 0;
+	  color: #000;
+	  font-family: "Cardo", "Times", serif;
+	  font-size: 1em;
+	  line-height: 1.3em;
+  }
+  
+  img.articleImg {
+	  float: right;
+	  margin: 0 0 1em 1em;
+	  border: 1px solid #aaa;
+  }
+  
+  .articlePlain {
+	  padding-bottom:1em;	
+  }
+  
+  .js #mainContent {
+	  margin-top: .5em;
+	  -webkit-transition: all 0.3s ease-out;  
+	  -moz-transition: all 0.3s ease-out;
+	  -ms-transition: all 0.3s ease-out;
+	  -o-transition: all 0.3s ease-out;
+	  transition: all 0.3s ease-out;
+
+  }
+
+  a.menu-link {
+	display: block;
+	display: none;
+	width: 3em;
+	height: 3em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index:500;
+	border-left: 1px solid $borderColors;
+	background-color: #FFC;
+	.icon {
+		  display: block;
+		  position: absolute;
+		  top: 1.2em;
+		  left: 1em;
+		  width: 1em; 
+		  height:.5em; 
+		  padding-bottom:.125em;
+		  border-top: .375em double #666; 
+		  border-bottom: .125em solid #666; 
+	  }
+	&:hover.menu-link {
+	  border-left: 1px solid $borderColors;
+	  }
+  }
+  
+  .accordion {
+	  width: 100%;
+	  .accordionitem {
+		  cursor:	pointer;
+		  -webkit-transition: height 0.3s ease-out;
+		  -moz-transition: height 0.3s ease-out;
+		  transition: height 0.3s ease-out;
+		  background-color: #AAA;
+		  height: 2em;
+		  overflow:hidden;
+		  margin-bottom: 1em;
+		  padding: .5em;
+		  h3 {
+			  margin-bottom: 1em;
+		  }
+		  /* this class gets appended to .accordionitem through jquery 
+			 and therefore changes to full height */
+		  &.openMe {
+			  height: 100%;
+			  overflow: auto;
+		  }
+	  }
+  }
+
+  
+  .js .menu-link {
+	   display: block;
+  }
+
+  header {
+	  min-height: 3em;
+	  width: 100%;
+	  .logo {
+		  clear: left;
+		  float: none;	
+		  margin: 0px auto;
+		  padding-top: 2em;
+		  padding-bottom: .6em;
+	  }
+  }
+  
+  #backToTop a {
+	  /* This is all for the Back To Top link, which shows
+		 up only when the user scrolls down so the header is
+		 hidden (that part is accomplished in Javascript) */
+		 
+	  /* display as block, then hide it */
+	  display: block;
+	  display: none;
+  
+	  /* make sure it's top of all other elements and
+		 doesn't completely hide the content behind it */
+	  z-index: 999; 
+	  opacity: .8;
+  
+	  /* keep it fixed in the upper right when showing */
+	  position: fixed;
+	  top: .5em;
+	  right: .7em;
+	  
+	  /* round the corners using the $genRadius var set in the SCSS */
+	  -moz-border-radius: $genRadius;
+	  -webkit-border-radius: $genRadius;
+	  -o-border-radius: $genRadius;
+	  border-radius: $genRadius;
+  
+	  padding: .8em;
+	  background-color: #333;
+	  font-family:  "Signika Negative", "Gotham", "Helvetica", sans-serif;
+	  text-decoration: none;
+	  text-transform:uppercase;
+	  text-align:center;
+	  font-size: .8em;    
+	  color: #fff;
+	  &:hover {
+		   background-color: #000;
+		   opacity: .9;
+	  }
+  }
+  
+/* This is the stuff that makes our nav appear and disappear */
+  .js nav[role=navigation] {
+	overflow: hidden;
+	max-height: 0;
+	  -webkit-transition: all 0.3s ease-out;  
+	  -moz-transition: all 0.3s ease-out;
+	  -ms-transition: all 0.3s ease-out;
+	  -o-transition: all 0.3s ease-out;
+	  transition: all 0.3s ease-out;
+
+  }
+  
+  nav[role=navigation].active {
+	  max-height: $pushDownVal;
+  }
+  
+  #mainContent.pushDown {
+	  margin-top: $pushDownVal;
+  }
+  
+  #sideBar  {
+	  background-color: $pageColor;
+		h2 {
+			font-size: 1.2em;
+			line-height: 1.2em;
+			margin-bottom: .4em;
+		} 
+		p {
+			font-size: .8em;
+			line-height: 1.2em;
+		}
+		.sideItem {
+			padding-bottom: 1em;
+		}
+	  position: relative;	
+	  width: 100%; 
+  }
+  
+  #sidebox {
+	  @extend #sideBar;
+	  margin-top: 1em;
+	  background-color: #FFC;
+  }
+  
+  footer {
+	  background-color:$footerColor;
+	  position: relative;
+	  height: 2.5em;
+	  width: 100%;
+	  padding: .5em;
+  }
+	
+	
+
+/* ===================================================== 
+   						MEDIA QUERIES 
+   ===================================================== */
+
+
+@media only screen and (max-width: $smallDeskWidth) and (min-width: $mobileWidth){
+	#wrapper {
+		background-color:transparent;	
+		width: $smallDeskWidth;
+		max-width:94%;
+		margin-bottom: 3em;
+	}
+	
+	#sideBar  {
+		float: none;
+		clear: both;	
+		width: 100%; 
+		padding: 1em;
+		min-height: 100px;
+		border: none;		
+	}
+
+	#mainContent {
+		background-color: $pageColor;	
+		width: 100%;
+		margin-bottom: 2em;
+	}
+	
+}
+
+@media only screen and (min-width: $smallDeskWidth) {
+/* Here are the styles for when our page grows to above our largest breakpoint */
+
+	body {
+		min-width: 19em;
+	}
+	
+	#wrapper {
+		width: $deskWidth;
+		max-width:96%;
+		margin: 1em auto 0 auto;
+		position: relative;
+		min-height: 100%;
+	}
+	
+	header {
+		background-color: $pageColor;	
+		width: 100%;
+		height: 3em;
+		margin: .6em 0;
+		padding: 1em;
+	}
+	
+	a.menu-link {
+			display: none;
+	}
+	
+	.js .menu-link {
+	   display: none;
+  }
+	
+	
+	#mainContent {
+		background-color: $pageColor;
+		float: left;
+		padding: 1em;
+		margin-top: 1.5em;
+		width:68%; 
+	}
+		
+	#sideBar {
+		background-color: $pageColor;
+		min-height: 10em;
+		float: right;
+		border-left: 1px $borderColors solid;
+		padding: 1em;
+		margin-top: .5em;
+		width: 28%; 
+	}
+	 
+	#sidebox {
+		@extend #sideBar;
+		margin-top: 1em;
+		background-color: #FFC;
+	}
+	
+	footer {
+		background-color:$footerColor;
+		position:fixed;
+		bottom: 0em;
+		height: 2.5em;
+		width: 100%;
+		padding: .5em;
+	}
+}
